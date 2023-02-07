@@ -1,9 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
+import './css/index.css'
+
 const BookList = () => {
 	return (
-		<section>
+		<section className='booklist'>
+			<Book />
+			<Book />
+			<Book />
 			<Book />
 		</section>
 	)
@@ -11,7 +16,7 @@ const BookList = () => {
 
 const Book = () => {
 	return (
-		<article>
+		<article className='book'>
 			<Image />
 			<Title />
 			<Author />
@@ -19,10 +24,15 @@ const Book = () => {
 	)
 }
 
-const Image = () => <h2>image placeholder</h2>
-const Title = () => <h2>Book title</h2>
+const Image = () => (
+	<img
+		src='https://m.media-amazon.com/images/I/91HSzl9bxoL._AC_UY218_.jpg'
+		alt='Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones'
+	/>
+)
+const Title = () => <h2>Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones</h2>
 const Author = () => {
-	return <h4>Author</h4>
+	return <h4>James Clear</h4>
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
