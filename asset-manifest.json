@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Project_React_Booklist/static/css/main.3e9bc673.css",
+    "main.js": "/Project_React_Booklist/static/js/main.abddf328.js",
+    "index.html": "/Project_React_Booklist/index.html",
+    "main.3e9bc673.css.map": "/Project_React_Booklist/static/css/main.3e9bc673.css.map",
+    "main.abddf328.js.map": "/Project_React_Booklist/static/js/main.abddf328.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3e9bc673.css",
+    "static/js/main.abddf328.js"
+  ]
+}
