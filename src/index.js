@@ -1,39 +1,75 @@
+// ==========
+// =IMPORTS =
+// ==========
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-
 import './css/index.css'
 
+// ==========
+// == DATA ==
+// ==========
+const books = [
+	{
+		author: 'James Clear',
+		title: 'Atomic Habits',
+		img: './images/book-1.jpg',
+		id: 1,
+	},
+	{
+		author: 'Brad Gilmore',
+		title: 'Back From the Future',
+		img: 'https://m.media-amazon.com/images/I/71qTM0HuuML.jpg',
+		id: 2,
+	},
+]
+
+// ==========
+// COMPONENTS
+// ==========
 const BookList = () => {
 	return (
-		<section className='booklist'>
-			<Book />
-			<Book />
-			<Book />
-			<Book />
+		<section className='bookList'>
+			<EventExamples />
+			{books.map(book => {
+				return <Book {...book} key={book.id} />
+			})}
 		</section>
 	)
 }
 
-const Book = () => {
+const EventExamples = () => {
+	const handleFormInput = () => {
+		console.log('test')
+	}
+
+	const handleButtonClick = () => {
+		console.log('test')
+	}
+
+	return (
+		<section>
+			<form>
+				<h2>Typical Form</h2>
+				<input type='text' name='example' onChange={handleFormInput} style={{ margin: '1rem 0' }} />
+			</form>
+			<button onClick={handleButtonClick}>Click me</button>
+		</section>
+	)
+}
+
+const Book = props => {
+	const { img, title, author } = props
 	return (
 		<article className='book'>
-			<Image />
-			<Title />
-			<Author />
+			<img src={img} alt={title} />
+			<h2>{title.toUpperCase()}</h2>
+			<h4>{author}</h4>
 		</article>
 	)
 }
 
-const Image = () => (
-	<img
-		src='https://m.media-amazon.com/images/I/91HSzl9bxoL._AC_UY218_.jpg'
-		alt='Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones'
-	/>
-)
-const Title = () => <h2>Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones</h2>
-const Author = () => {
-	return <h4>James Clear</h4>
-}
-
+// ==========
+// == REST ==
+// ==========
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(<BookList />)
